@@ -25,7 +25,7 @@ const Navbar = () => {
     <section className="font-suse text-md">
       <div className="flex flex-row justify-between items-center p-2">
         <div className="font-chakra text-3xl bg-black text-white p-1 rounded-lg">
-          Eshcrop
+          Echsrop
         </div>
         <div className="flex flex-row gap-4">
           <NavItem to="/" label="Dashboard" />
