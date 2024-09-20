@@ -157,7 +157,7 @@ const Right_db = () => {
                     // Display both grade and score for Portfolio Score
                     <div className="flex flex-row gap-2 items-center">
                       <p
-                        className={`font-bold text-white w-8 h-8 flex items-center justify-center rounded-full ${
+                        className={`font-bold text-3xl md:text-2xl text-white w-12 h-12 md:w-8 md:h-8 flex items-center justify-center rounded-full ${
                           item.grade === 'A'
                             ? 'bg-green-600'
                             : item.grade === 'B'
@@ -171,13 +171,13 @@ const Right_db = () => {
                       >
                         {item.grade}
                       </p>
-                      <p className="font-bold group-hover:text-white">
+                      <p className="font-bold group-hover:text-white text-3xl md:text-2xl">
                         {item.value}
                       </p>
                     </div>
                   ) : (
                     // Display only the value for other items
-                    <p className="font-bold group-hover:text-white">
+                    <p className="font-bold group-hover:text-white text-3xl md:text-2xl">
                       {item.value}
                     </p>
                   )}

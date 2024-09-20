@@ -5,9 +5,9 @@ const Duration_Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const options = [
-    'Last 30 Days',
-    'Last One Day',
+    'Last Day',
     'Last Week',
+    'Last Month',
     'Last Year',
     'Max',
   ];

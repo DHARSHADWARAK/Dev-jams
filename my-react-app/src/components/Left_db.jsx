@@ -63,73 +63,69 @@ const CardList = () => {
 
   return (
     <div className='md:w-1/2'>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4   gap-[1rem]">
-          {data.map((service, index) => (
-            <div key={index} className='flip-box w-full'>
-              <div className="flip-box-inner">
-                <div className='flip-box-front flex bg-gray-100 p-2 rounded-lg shadow-lg text-gray-800 items-center justify-center'>
-                  <div className='flex flex-col justify-center items-center'>
-                  <div className='flex text-xl font-semibold '>
-                    <img src={service.symbol} alt="" />
-                    </div>
-                  <img src="src\assets\—Pngtree—vector star icon_4231909.png" className='w-[40%]' alt="" />{/*Use symbol related to the section*/}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1rem]">
+        {data.map((service, index) => (
+          <div key={index} className='flip-box w-full'>
+            <div className="flip-box-inner">
+              <div className='flip-box-front flex bg-gray-100 p-2 rounded-lg shadow-lg text-gray-800 items-center justify-center'>
+                <div className='flex flex-col justify-center items-center'>
+                  <div className='flex text-xl font-semibold justify-center items-center'>
+                    <img src={service.symbol} alt="" className='w-1/3 md:w-full'/>
                   </div>
+                  <img src="src/assets/—Pngtree—vector star icon_4231909.png" className='w-[40%]' alt="" />
                 </div>
-                <div className='flex flex-col justify-between flip-box-back  bg-black p-2 rounded-lg shadow-lg text-white'>
-                    <div>
-                        <div className="text-xl font-semibold mb-1">{service.name}</div>
-                        <div className="text-base font-semibold ">{service.shortform}</div>
-                    </div>
-                    <div>
-                        <p className="leading-relaxed">
-                            {service.value}
-                        </p>
-                        <p className={`text-sm ${
-                service.percentage >= 0 ? 'text-green-500' : 'text-red-500'
-              }`}>
-                            {service.percentage}%
-                        </p>
-                    </div>
+              </div>
+              <div className='flex flex-col justify-between flip-box-back bg-black p-2 rounded-lg shadow-lg text-white'>
+                <div>
+                  <div className="text-xl font-semibold mb-1">{service.name}</div>
+                  <div className="text-base font-semibold ">{service.shortform}</div>
+                </div>
+                <div>
+                  <p className="leading-relaxed">
+                    {service.value}
+                  </p>
+                  <p className={`text-sm ${service.percentage >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                    {service.percentage}%
+                  </p>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="flex flex-col">
-      {data.map((item, index) => (
-        <div
-          key={index}
-          className="flex items-center p-4 border-b hover:bg-gray-100"
-        >
-          {/* Symbol/Icon */}
-          <div className="w-12 h-12 bg-gray-200 flex items-center justify-center rounded-full p-1">
-            {/* Replace the text with an actual icon if available */}
-            <img src={item.symbol} alt="" />
           </div>
+        ))}
+      </div>
 
-          {/* Name and Shortform */}
-          <div className="flex flex-col ml-4">
-            <span className="font-semibold text-gray-800">{item.name}</span>
-            <span className="text-sm text-gray-500">{item.shortform}</span>
-          </div>
+      {/* Scrollable container for the last section */}
+      <div className="flex flex-col md:overflow-y-auto md:h-[25rem]">
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center p-4 border-b hover:bg-gray-100"
+          >
+            {/* Symbol/Icon */}
+            <div className="w-12 h-12 bg-gray-200 flex items-center justify-center rounded-full p-1">
+              <img src={item.symbol} alt="" />
+            </div>
 
-          {/* Value and Percentage */}
-          <div className="flex flex-col ml-auto text-right">
-            <span className="font-semibold text-gray-800">
-              {item.value.toLocaleString()}
-            </span>
-            <span
-              className={`text-sm ${
-                item.percentage >= 0 ? 'text-green-500' : 'text-red-500'
-              }`}
-            >
-              {item.percentage}%
-            </span>
+            {/* Name and Shortform */}
+            <div className="flex flex-col ml-4">
+              <span className="font-semibold text-base text-gray-800">{item.name}</span>
+              <span className="text-sm text-gray-500">{item.shortform}</span>
+            </div>
+
+            {/* Value and Percentage */}
+            <div className="flex flex-col ml-auto text-right">
+              <span className="font-semibold text-gray-800">
+                {item.value.toLocaleString()}
+              </span>
+              <span
+                className={`text-sm ${item.percentage >= 0 ? 'text-green-500' : 'text-red-500'}`}
+              >
+                {item.percentage}%
+              </span>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
   );
 };
