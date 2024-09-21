@@ -58,14 +58,14 @@ const Navbar = () => {
         <div className="hidden md:flex flex-row gap-2 items-center justify-center mr-3">
           <FontAwesomeIcon icon={faBell} className="text-black-500 hover:cursor-pointer" />
           <div>|</div>
-          <div className="flex flex-row justify-center items-center gap-1 hover:cursor-pointer">
+          <Link to={'/user'} className="flex flex-row justify-center items-center gap-1 hover:cursor-pointer">
             <div className="flex items-center justify-center">
-              <div className="bg-gray-200 p-1 rounded-full flex items-center justify-center">
+              <div className="bg-gray-200 p-2 rounded-full flex items-center justify-center">
                 <FontAwesomeIcon icon={faUser} className="text-gray-700" />
               </div>
             </div>
             <div className='text-lg'>User</div>
-          </div>
+          </Link>
         </div>
       </div>
 
